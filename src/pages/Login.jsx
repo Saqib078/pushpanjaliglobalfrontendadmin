@@ -249,7 +249,7 @@ import { useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import AdminBrandLogo from "../components/AdminBrandLogo";
 import { useAuth } from "../context/AuthContext";
-import "../app.css";
+import "../App.css";
 
 export default function Login() {
 

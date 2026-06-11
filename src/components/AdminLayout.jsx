@@ -2,7 +2,7 @@ import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { api } from "../lib/api";
 import { clearToken } from "../lib/auth";
 import AdminBrandLogo from "./AdminBrandLogo";
-import { authApi } from "../lib/authApi";
+import { authApi } from "../lib/authapi";
 
 const menu = [
   { to: "/", label: "Dashboard" },
