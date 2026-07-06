@@ -364,4 +364,12 @@ export const authApi = {
                 method: "GET",
             }
         ),
+
+    getProductInformation: (productId) =>
+        request(
+            `/admin/product-information/${productId}`,
+            {
+                method: "GET",
+            }
+        ),
 };

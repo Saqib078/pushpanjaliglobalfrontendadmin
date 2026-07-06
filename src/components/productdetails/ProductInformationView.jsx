@@ -1,7 +1,57 @@
-const ProductInformationView = ({ data, onEdit }) => {
+
+import { useEffect, useState } from "react";
+import { authApi } from "../../lib/api";
+
+const ProductInformationView = ({ productId, onEdit }) => {
+
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+
+        if (!productId) return;
+
+        getProductInformation();
+
+    }, [productId]);
+
+    const getProductInformation = async () => {
+
+        try {
+
+            setLoading(true);
+
+            const response =
+                await authApi.getProductInformation(productId);
+
+            setData(response.data);
+
+        } catch (error) {
+
+            console.error(error);
+
+            setData(null);
+
+        } finally {
+
+            setLoading(false);
+
+        }
+    };
+
+    if (loading) {
+
+        return (
+            <div className="text-center py-10">
+                Loading...
+            </div>
+        );
+    }
 
     if (!data) {
+
         return (
+
             <div className="border rounded-xl p-10 text-center">
 
                 <h2 className="text-xl font-semibold">
@@ -20,6 +70,7 @@ const ProductInformationView = ({ data, onEdit }) => {
                 </button>
 
             </div>
+
         );
     }
 
@@ -173,3 +224,6 @@ const ProductInformationView = ({ data, onEdit }) => {
 };
 
 export default ProductInformationView;
+
+
+   

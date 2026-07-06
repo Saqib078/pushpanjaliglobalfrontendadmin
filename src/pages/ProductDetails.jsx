@@ -355,7 +355,7 @@ export default function ProductDetails() {
             />
 
             <ProductInformationView
-                data={productInformation}
+                productId={product._id}
                 onEdit={() => navigate()}
             />
 
