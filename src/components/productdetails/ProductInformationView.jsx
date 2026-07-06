@@ -1,10 +1,10 @@
 
 import { useEffect, useState } from "react";
 import { authApi } from "../../lib/authapi";
-
+import { useNavigate } from "react-router-dom";
 
 const ProductInformationView = ({ productId, onEdit }) => {
-
+    const navigate = useNavigate();
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -64,7 +64,11 @@ const ProductInformationView = ({ productId, onEdit }) => {
                 </p>
 
                 <button
-                    onClick={onEdit}
+                    onClick={() =>
+                        navigate(
+                            `/admin/product-information/create/${productId}`
+                        )
+                    }
                     className="mt-6 bg-black text-white px-6 py-3 rounded-lg"
                 >
                     Add Information
@@ -227,4 +231,3 @@ const ProductInformationView = ({ productId, onEdit }) => {
 export default ProductInformationView;
 
 
-   
