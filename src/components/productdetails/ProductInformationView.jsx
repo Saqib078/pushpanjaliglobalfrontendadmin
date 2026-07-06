@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
-import { authApi } from "../../lib/api";
+import { authApi } from "../../lib/authapi";
+
 
 const ProductInformationView = ({ productId, onEdit }) => {
 
