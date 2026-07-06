@@ -356,7 +356,9 @@ export default function ProductDetails() {
 
             <ProductInformationView
                 productId={product._id}
-                onEdit={() => navigate()}
+                onEdit={() => navigate(
+                    `/products/detailsinfo/${productId}`
+                )}
             />
 
             <ProductSeoSection

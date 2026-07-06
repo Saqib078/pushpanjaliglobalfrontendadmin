@@ -31,7 +31,12 @@ const ProductInformationForm = ({
     useEffect(() => {
 
         if (mode === "edit" && initialData) {
-            setFormData(initialData);
+
+            setFormData({
+                ...initialState,
+                ...initialData,
+            });
+
         }
 
     }, [mode, initialData]);
@@ -94,7 +99,10 @@ const ProductInformationForm = ({
 
         e.preventDefault();
 
-        onSubmit(formData);
+        if (onSubmit) {
+            onSubmit(formData);
+        }
+
     };
 
     return (
@@ -103,6 +111,17 @@ const ProductInformationForm = ({
             onSubmit={handleSubmit}
             className="space-y-10"
         >
+            <div>
+
+                <h1 className="text-2xl font-semibold">
+
+                    {mode === "create"
+                        ? "Create Product Information"
+                        : "Update Product Information"}
+
+                </h1>
+
+            </div>
 
             {/* ================= Health Benefits ================= */}
 
@@ -225,7 +244,7 @@ const ProductInformationForm = ({
                 </div>
 
             </div>
-                        {/* ================= Ingredients ================= */}
+            {/* ================= Ingredients ================= */}
 
             <div className="space-y-4">
 
@@ -292,13 +311,16 @@ const ProductInformationForm = ({
                 <button
                     type="submit"
                     disabled={loading}
-                    className="bg-blue-600 text-white px-8 py-3 rounded-lg"
+                    className={`px-8 py-3 rounded-lg text-white ${loading
+                            ? "bg-gray-400 cursor-not-allowed"
+                            : "bg-blue-600"
+                        }`}
                 >
                     {loading
                         ? "Saving..."
                         : mode === "create"
-                        ? "Create Information"
-                        : "Update Information"}
+                            ? "Create Information"
+                            : "Update Information"}
                 </button>
 
             </div>

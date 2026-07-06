@@ -53,7 +53,7 @@ const ProductInformationView = ({ productId, onEdit }) => {
 
         return (
 
-            <div className="border rounded-xl p-10 text-center">
+            <div className="border rounded-xl p-10 text-center bg-white">
 
                 <h2 className="text-xl font-semibold">
                     Product Information
@@ -77,7 +77,7 @@ const ProductInformationView = ({ productId, onEdit }) => {
 
     return (
 
-        <div className="space-y-10">
+        <div className="bg-white border-xl rounded p-[25px] space-y-10">
 
             {/* Health */}
 

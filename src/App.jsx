@@ -18,6 +18,8 @@ import ProductsAll from './components/product/ProductsAll';
 import AddProduct from './pages/AddProduct';
 import ProductMedia from './pages/ProductMedia';
 import ProductDetails from './pages/ProductDetails';
+import ProductInformationForm from './components/productdetails/ProductInformationForm';
+import ProductInformationCreate from './components/productdetails/ProductInformationCreate';
 
 // new -- 24 may 2026
 function RequireAuth({ children }) {
@@ -76,6 +78,8 @@ function App() {
           <Route path="/products/:slug" element={<ProductDetails />} />
 
           <Route path="/products" element={<Productsnew />} />
+          <Route path="/products/detailsinfo/:productId" element={<ProductInformationCreate />} />
+
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/instagram-posts" element={<InstagramPosts />} />
           <Route path="/orders" element={<Orders />} />

@@ -372,4 +372,13 @@ export const authApi = {
                 method: "GET",
             }
         ),
+
+    createProductInformation: (payload) =>
+        request(
+            "/admin/product-information",
+            {
+                method: "POST",
+                body: JSON.stringify(payload),
+            }
+        ),
 };
