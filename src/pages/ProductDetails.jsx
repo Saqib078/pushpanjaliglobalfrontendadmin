@@ -18,11 +18,15 @@ import ProductSystemInfoSection from "../components/productdetails/ProductSystem
 
 import DangerZone from "../components/productdetails/DangerZone";
 import ProductMediaSection from "../components/productdetails/ProductMediaSection";
+import ProductInformationView from "../components/productdetails/ProductInformationView";
 
 export default function ProductDetails() {
 
     const { slug } =
         useParams();
+
+    const [productInformation, setProductInformation] = useState(null);
+    // const [loading, setLoading] = useState(true);
 
     const [product, setProduct] =
         useState(null);
@@ -288,6 +292,36 @@ export default function ProductDetails() {
         }
     }
 
+    useEffect(() => {
+
+        if (product?._id) {
+            getProductInformation();
+        }
+
+    }, [product]);
+
+    const getProductInformation = async () => {
+
+        try {
+
+            const response = await axiosInstance.get(
+                `/product-information/${product._id}`
+            );
+
+            setProductInformation(response.data.data);
+
+        } catch (error) {
+
+            if (error.response?.status === 404) {
+                setProductInformation(null);
+            }
+
+        } finally {
+
+            setLoading(false);
+        }
+    };
+
 
     if (loading) {
 
@@ -320,6 +354,11 @@ export default function ProductDetails() {
                 setProduct={setProduct}
             />
 
+            <ProductInformationView
+                data={productInformation}
+                onEdit={() => navigate()}
+            />
+
             <ProductSeoSection
                 product={product}
                 setProduct={setProduct}
@@ -337,6 +376,7 @@ export default function ProductDetails() {
             <ProductSystemInfoSection
                 product={product}
             />
+
 
             <ProductMediaSection
                 product={product}
