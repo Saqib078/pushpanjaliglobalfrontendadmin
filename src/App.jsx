@@ -23,6 +23,7 @@ import ProductInformationCreate from './components/productdetails/ProductInforma
 import ProductInformationEdit from './components/productdetails/ProductInformationEdit';
 import InstagramCreate from './components/instagram/InstagramCreate';
 import Instagram from './components/instagram/Instagram';
+import InstagramEdit from './components/instagram/InstagramEdit';
 
 // new -- 24 may 2026
 function RequireAuth({ children }) {
