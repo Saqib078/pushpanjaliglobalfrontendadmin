@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { authApi } from "../../lib/authapi";
+import InstagramCard from "./InstagramCard";
 
 const Instagram = () => {
 
