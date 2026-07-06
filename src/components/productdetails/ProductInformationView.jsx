@@ -66,7 +66,7 @@ const ProductInformationView = ({ productId, onEdit }) => {
                 <button
                     onClick={() =>
                         navigate(
-                            `/admin/product-information/create/${productId}`
+                            `/products/detailsinfo/${productId}`
                         )
                     }
                     className="mt-6 bg-black text-white px-6 py-3 rounded-lg"
@@ -158,7 +158,7 @@ const ProductInformationView = ({ productId, onEdit }) => {
                     {data.storage.instructions.map((item, index) => (
 
                         <li key={index}>
-                            • {item}
+                            {item}
                         </li>
 
                     ))}
@@ -215,7 +215,10 @@ const ProductInformationView = ({ productId, onEdit }) => {
             <div className="flex justify-end">
 
                 <button
-                    onClick={onEdit}
+                    onClick={() =>
+                        navigate(
+                            `/products/infoUpdate/${productId}`
+                        )}
                     className="bg-black text-white px-6 py-3 rounded-lg"
                 >
                     Edit Information

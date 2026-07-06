@@ -381,4 +381,13 @@ export const authApi = {
                 body: JSON.stringify(payload),
             }
         ),
+
+    updateProductInformation: (productId, payload) =>
+        request(
+            `/admin/product-information/${productId}`,
+            {
+                method: "PATCH",
+                body: JSON.stringify(payload),
+            }
+        ),
 };
