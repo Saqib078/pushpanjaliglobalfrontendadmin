@@ -390,4 +390,46 @@ export const authApi = {
                 body: JSON.stringify(payload),
             }
         ),
+
+    getInstagramReels: () =>
+        request(
+            "/admin/instagram/all",
+            {
+                method: "GET",
+            }
+        ),
+
+    deleteInstagramReel: (id) =>
+        request(
+            `/admin/instagram/${id}`,
+            {
+                method: "DELETE",
+            }
+        ),
+
+    createInstagramReel: (payload) =>
+        request(
+            "/admin/instagram/create",
+            {
+                method: "POST",
+                body: payload,
+            }
+        ),
+
+    getInstagramReelById: (id) =>
+        request(
+            `/admin/instagram/${id}`,
+            {
+                method: "GET",
+            }
+        ),
+
+    updateInstagramReel: (id, payload) =>
+        request(
+            `/admin/instagram/${id}`,
+            {
+                method: "PATCH",
+                body: payload,
+            }
+        ),
 };

@@ -9,7 +9,7 @@ const menu = [
   { to: "/categories", label: "Categories" },
   { to: "/products", label: "Products" },
   // { to: "/blogs", label: "Blogs" },
-  // { to: "/instagram-posts", label: "Instagram Feed" },
+  { to: "/instagram-posts", label: "Instagram Feed" },
   { to: "/orders", label: "Orders & delivery" },
 ];
 

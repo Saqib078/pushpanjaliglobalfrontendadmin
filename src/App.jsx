@@ -21,6 +21,8 @@ import ProductDetails from './pages/ProductDetails';
 import ProductInformationForm from './components/productdetails/ProductInformationForm';
 import ProductInformationCreate from './components/productdetails/ProductInformationCreate';
 import ProductInformationEdit from './components/productdetails/ProductInformationEdit';
+import InstagramCreate from './components/instagram/InstagramCreate';
+import Instagram from './components/instagram/Instagram';
 
 // new -- 24 may 2026
 function RequireAuth({ children }) {
@@ -82,8 +84,18 @@ function App() {
           <Route path="/products/detailsinfo/:productId" element={<ProductInformationCreate />} />
           <Route path="/products/infoUpdate/:productId" element={<ProductInformationEdit />} />
 
+          <Route
+            path="/admin/instagram/create"
+            element={<InstagramCreate />}
+          />
+
+          <Route
+            path="/admin/instagram/edit/:id"
+            element={<InstagramEdit />}
+          />
+
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/instagram-posts" element={<InstagramPosts />} />
+          <Route path="/instagram-posts" element={<Instagram/>} />
           <Route path="/orders" element={<Orders />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
