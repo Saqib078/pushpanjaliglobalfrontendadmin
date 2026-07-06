@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import ProductInformationForm from "../../components/product-information/ProductInformationForm";
+import ProductInformationForm from "./ProductInformationForm";
 import { authApi } from "../../lib/authapi";
 
 const ProductInformationEdit = () => {
