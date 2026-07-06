@@ -37,7 +37,7 @@ const InstagramCard = ({ reel, onDelete }) => {
 
             <video
 
-                src={reel.video_url}
+                src={`https://pushpanjaliglobal.com${reel.video_url}`}
 
                 controls
 
